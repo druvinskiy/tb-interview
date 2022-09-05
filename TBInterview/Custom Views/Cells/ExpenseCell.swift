@@ -33,13 +33,10 @@ class ExpenseCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            titleLabel.bottomAnchor.constraint(equalTo: categoryLabel.topAnchor, constant: -4),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             
             categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            categoryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            categoryLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             
             amountLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             amountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)

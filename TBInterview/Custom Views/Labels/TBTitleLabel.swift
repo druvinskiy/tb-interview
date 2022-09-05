@@ -26,9 +26,6 @@ class TBTitleLabel: UILabel {
     
     private func configure() {
         textColor = .black
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
-        lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

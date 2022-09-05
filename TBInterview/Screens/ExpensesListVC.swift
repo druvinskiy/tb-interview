@@ -49,7 +49,7 @@ class ExpensesListVC: TBDataLoadingVC {
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UIHelper.createFlowLayout(in: view))
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionView.createExpensesListVCFlowLayout(in: view))
         collectionView.backgroundColor = .zircon
         collectionView.register(ExpenseCell.self, forCellWithReuseIdentifier: ExpenseCell.reuseID)
     }

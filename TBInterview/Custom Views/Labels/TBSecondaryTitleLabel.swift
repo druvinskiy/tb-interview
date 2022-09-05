@@ -26,9 +26,7 @@ class TBSecondaryTitleLabel: UILabel {
     private func configure() {
         textColor = .storm
         adjustsFontForContentSizeCategory = true
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.75
-        lineBreakMode = .byWordWrapping
+        lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

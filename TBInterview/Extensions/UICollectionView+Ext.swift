@@ -1,15 +1,14 @@
 //
-//  UIHelper.swift
+//  UICollectionView+Ext.swift
 //  TBInterview
 //
-//  Created by David Ruvinskiy on 8/22/22.
+//  Created by David Ruvinskiy on 9/4/22.
 //
 
 import UIKit
 
-enum UIHelper {
-    
-    static func createFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
+extension UICollectionView {
+    static func createExpensesListVCFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
         let width = view.bounds.width
         let padding: CGFloat = 8
         let availableWidth = width - (padding * 2)

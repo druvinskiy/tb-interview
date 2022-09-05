@@ -9,6 +9,8 @@ import UIKit
 
 class OverviewView: UIView {
     
+    let categoryEmojiDict = ["travel": "✈️", "food": "🍔", "software": "💻"]
+    
     let monthLabel = TBTitleLabel(textAlignment: .left, fontSize: 24, weight: .bold)
     let spentMostOnLabel = TBSecondaryTitleLabel(fontSize: 16)
     let totalMonthlySpendLabel = TBSecondaryTitleLabel(fontSize: 16)
@@ -27,53 +29,57 @@ class OverviewView: UIView {
     
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
-        addSubViews(monthLabel, spentMostOnLabel, totalMonthlySpendLabel, categoryLabel, amountLabel)
+        addSubViews(monthLabel, spentMostOnLabel, categoryLabel, totalMonthlySpendLabel, amountLabel)
+        
+        spentMostOnLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        spentMostOnLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        categoryLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        categoryLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
+        totalMonthlySpendLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        totalMonthlySpendLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        amountLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        amountLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
+        let padding: CGFloat = 16
         
         NSLayoutConstraint.activate([
-            monthLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            monthLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            monthLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            monthLabel.heightAnchor.constraint(equalToConstant: 20),
+            monthLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            monthLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             
             spentMostOnLabel.topAnchor.constraint(equalTo: monthLabel.bottomAnchor, constant: 30),
-            spentMostOnLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            spentMostOnLabel.widthAnchor.constraint(equalToConstant: 170),
+            spentMostOnLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             spentMostOnLabel.heightAnchor.constraint(equalToConstant: 20),
             
+            categoryLabel.leadingAnchor.constraint(equalTo: spentMostOnLabel.trailingAnchor, constant: 10),
+            categoryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            categoryLabel.centerYAnchor.constraint(equalTo: spentMostOnLabel.centerYAnchor),
+
+            totalMonthlySpendLabel.leadingAnchor.constraint(equalTo: spentMostOnLabel.leadingAnchor),
             totalMonthlySpendLabel.topAnchor.constraint(equalTo: spentMostOnLabel.bottomAnchor, constant: 12),
-            totalMonthlySpendLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            totalMonthlySpendLabel.widthAnchor.constraint(equalToConstant: 170),
-            totalMonthlySpendLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            categoryLabel.leadingAnchor.constraint(equalTo: spentMostOnLabel.trailingAnchor, constant: 20),
-            categoryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            categoryLabel.topAnchor.constraint(equalTo: monthLabel.bottomAnchor, constant: 30),
-            categoryLabel.heightAnchor.constraint(equalToConstant: 20),
-            
-            amountLabel.leadingAnchor.constraint(equalTo: totalMonthlySpendLabel.trailingAnchor, constant: 20),
-            amountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            amountLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 12),
-            amountLabel.heightAnchor.constraint(equalToConstant: 20)
+            amountLabel.leadingAnchor.constraint(equalTo: totalMonthlySpendLabel.trailingAnchor, constant: 10),
+            amountLabel.trailingAnchor.constraint(equalTo: categoryLabel.trailingAnchor),
+            amountLabel.centerYAnchor.constraint(equalTo: totalMonthlySpendLabel.centerYAnchor),
         ])
     }
     
     func set(expenses: [Expense], budget: Float) {
         let now = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "LLLL"
+        dateFormatter.setLocalizedDateFormatFromTemplate("LLLL")
         let currentMonthName = dateFormatter.string(from: now)
         
         monthLabel.text = "\(currentMonthName) Overview"
         spentMostOnLabel.text = "You spent the most on:"
         totalMonthlySpendLabel.text = "Total monthly spend:"
         
-        let expenseCalculationManager = ExpenseCalculationManager()
-        let mostSpentCategory = expenseCalculationManager.findMostSpentCategory(for: expenses)
-        let totalMonthlySpent = expenseCalculationManager.calculateTotalMonthlySpent(for: expenses)
+        let mostSpentCategory = ExpensesCalculator.findMostSpentCategory(for: expenses)
+        let totalMonthlySpent = ExpensesCalculator.calculateTotalMonthlySpent(for: expenses)
         
-        let symbol = ExpenseCategory.dict[mostSpentCategory] ?? ""
+        let symbol = categoryEmojiDict[mostSpentCategory] ?? ""
         categoryLabel.text = "\(symbol) \(mostSpentCategory.capitalized)"
-        
+
         amountLabel.text = totalMonthlySpent.toCurrencyFormat()
         amountLabel.textColor = totalMonthlySpent > budget ? .radical : .bajaBlast
     }

@@ -1,5 +1,5 @@
 //
-//  ExpenseCalculationManager.swift
+//  ExpensesCalculator.swift
 //  TBInterview
 //
 //  Created by David Ruvinskiy on 9/1/22.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ExpenseCalculationManager {
-    func findMostSpentCategory(for expenses: [Expense]) -> String {
+class ExpensesCalculator {
+    static func findMostSpentCategory(for expenses: [Expense]) -> String {
         var categorySpendings = [String: Float]()
         
         for expense in expenses {
@@ -19,7 +19,7 @@ struct ExpenseCalculationManager {
         return categorySpendings.max { a, b in a.value < b.value }!.key
     }
     
-    func calculateTotalMonthlySpent(for expenses: [Expense]) -> Float {
+    static func calculateTotalMonthlySpent(for expenses: [Expense]) -> Float {
         return expenses.map { $0.amount }.reduce(0, +)
     }
 }

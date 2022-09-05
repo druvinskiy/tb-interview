@@ -19,6 +19,7 @@
 		14D880E1265DB384004556A9 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D880E0265DB384004556A9 /* UIColor+Ext.swift */; };
 		14D880EA265DB64F004556A9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D880E9265DB64F004556A9 /* API.swift */; };
 		14D880EF265DB72C004556A9 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D880EE265DB72C004556A9 /* MockData.swift */; };
+		630993CA28C5974C00FFE125 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630993C928C5974C00FFE125 /* UICollectionView+Ext.swift */; };
 		635965A028B40E9900452FAB /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359659F28B40E9900452FAB /* Expense.swift */; };
 		635965A728B41FEA00452FAB /* TBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635965A628B41FEA00452FAB /* TBError.swift */; };
 		635965AF28B43ACF00452FAB /* TBTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635965AE28B43ACF00452FAB /* TBTitleLabel.swift */; };
@@ -26,9 +27,7 @@
 		635965B328B4453400452FAB /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635965B228B4453400452FAB /* UIView+Ext.swift */; };
 		635965B528B47B1B00452FAB /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635965B428B47B1B00452FAB /* ExpenseCell.swift */; };
 		635965B728B47BA600452FAB /* ExpensesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635965B628B47BA600452FAB /* ExpensesListVC.swift */; };
-		635965B928B47C9F00452FAB /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635965B828B47C9F00452FAB /* UIHelper.swift */; };
-		63598A6E28C154E20065072F /* ExpenseCalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63598A6D28C154E20065072F /* ExpenseCalculationManager.swift */; };
-		63598A7028C19CE40065072F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63598A6F28C19CE40065072F /* Constants.swift */; };
+		63598A6E28C154E20065072F /* ExpensesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63598A6D28C154E20065072F /* ExpensesCalculator.swift */; };
 		63D498FE28C2714700D03FE6 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D498FD28C2714700D03FE6 /* OverviewView.swift */; };
 		63D4990228C2850B00D03FE6 /* Float+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4990128C2850B00D03FE6 /* Float+Ext.swift */; };
 		63D4990528C2BCF200D03FE6 /* TBDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4990428C2BCF200D03FE6 /* TBDataLoadingVC.swift */; };
@@ -66,6 +65,7 @@
 		14D880E0265DB384004556A9 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		14D880E9265DB64F004556A9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		14D880EE265DB72C004556A9 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		630993C928C5974C00FFE125 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		6359659F28B40E9900452FAB /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		635965A628B41FEA00452FAB /* TBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBError.swift; sourceTree = "<group>"; };
 		635965AE28B43ACF00452FAB /* TBTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTitleLabel.swift; sourceTree = "<group>"; };
@@ -73,9 +73,7 @@
 		635965B228B4453400452FAB /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		635965B428B47B1B00452FAB /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		635965B628B47BA600452FAB /* ExpensesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListVC.swift; sourceTree = "<group>"; };
-		635965B828B47C9F00452FAB /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
-		63598A6D28C154E20065072F /* ExpenseCalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCalculationManager.swift; sourceTree = "<group>"; };
-		63598A6F28C19CE40065072F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		63598A6D28C154E20065072F /* ExpensesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCalculator.swift; sourceTree = "<group>"; };
 		63D498FD28C2714700D03FE6 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		63D4990128C2850B00D03FE6 /* Float+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Ext.swift"; sourceTree = "<group>"; };
 		63D4990428C2BCF200D03FE6 /* TBDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBDataLoadingVC.swift; sourceTree = "<group>"; };
@@ -163,6 +161,7 @@
 				635965B228B4453400452FAB /* UIView+Ext.swift */,
 				63D4990128C2850B00D03FE6 /* Float+Ext.swift */,
 				63D4991128C3DA7100D03FE6 /* UIViewController+Ext.swift */,
+				630993C928C5974C00FFE125 /* UICollectionView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -182,8 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				635965A628B41FEA00452FAB /* TBError.swift */,
-				635965B828B47C9F00452FAB /* UIHelper.swift */,
-				63598A6F28C19CE40065072F /* Constants.swift */,
+				63598A6D28C154E20065072F /* ExpensesCalculator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -192,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				14D880C0265DA7A5004556A9 /* Interactor.swift */,
-				63598A6D28C154E20065072F /* ExpenseCalculationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -376,12 +373,11 @@
 			files = (
 				635965A028B40E9900452FAB /* Expense.swift in Sources */,
 				63D4990D28C3CB4C00D03FE6 /* TBAlertContainerView.swift in Sources */,
-				63598A7028C19CE40065072F /* Constants.swift in Sources */,
 				14D880EA265DB64F004556A9 /* API.swift in Sources */,
 				14D880E1265DB384004556A9 /* UIColor+Ext.swift in Sources */,
 				635965A728B41FEA00452FAB /* TBError.swift in Sources */,
 				635965B328B4453400452FAB /* UIView+Ext.swift in Sources */,
-				63598A6E28C154E20065072F /* ExpenseCalculationManager.swift in Sources */,
+				63598A6E28C154E20065072F /* ExpensesCalculator.swift in Sources */,
 				14D880C1265DA7A5004556A9 /* Interactor.swift in Sources */,
 				635965AF28B43ACF00452FAB /* TBTitleLabel.swift in Sources */,
 				63D4990B28C3CAFF00D03FE6 /* TBBodyLabel.swift in Sources */,
@@ -391,12 +387,12 @@
 				635965B728B47BA600452FAB /* ExpensesListVC.swift in Sources */,
 				63D4990528C2BCF200D03FE6 /* TBDataLoadingVC.swift in Sources */,
 				14D88080265DA1B7004556A9 /* AppDelegate.swift in Sources */,
-				635965B928B47C9F00452FAB /* UIHelper.swift in Sources */,
 				63D4991028C3D6FA00D03FE6 /* TBButton.swift in Sources */,
 				63D498FE28C2714700D03FE6 /* OverviewView.swift in Sources */,
 				635965B128B43C2800452FAB /* TBSecondaryTitleLabel.swift in Sources */,
 				63D4991228C3DA7100D03FE6 /* UIViewController+Ext.swift in Sources */,
 				635965B528B47B1B00452FAB /* ExpenseCell.swift in Sources */,
+				630993CA28C5974C00FFE125 /* UICollectionView+Ext.swift in Sources */,
 				14D88082265DA1B7004556A9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
