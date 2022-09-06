@@ -78,7 +78,7 @@ class OverviewView: UIView {
         let totalMonthlySpent = ExpensesCalculator.calculateTotalMonthlySpent(for: expenses)
         
         let symbol = categoryEmojiDict[mostSpentCategory] ?? ""
-        categoryLabel.text = "\(symbol) \(mostSpentCategory.capitalized)"
+        categoryLabel.text = "\(mostSpentCategory.capitalized) \(symbol)"
 
         amountLabel.text = totalMonthlySpent.toCurrencyFormat()
         amountLabel.textColor = totalMonthlySpent > budget ? .radical : .bajaBlast

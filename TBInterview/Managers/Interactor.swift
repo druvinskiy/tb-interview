@@ -28,8 +28,7 @@ class Interactor {
                 guard let self = self else { return }
                 
                 do {
-                    let decoder = JSONDecoder()
-                    let expenses = try decoder.decode([Expense].self, from: data)
+                    let expenses = try JSONDecoder.decode(expensesData: data)
                     completed(.success(expenses))
                 } catch {
                     self.observer?.cancel()

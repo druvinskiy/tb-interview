@@ -50,9 +50,7 @@ class TBInterviewTests: XCTestCase {
         
         do {
             let data = try Data(contentsOf: path)
-            let decodedObject = try JSONDecoder().decode([Expense].self, from: data)
-            
-            return decodedObject
+            return try JSONDecoder.decode(expensesData: data)
         } catch {
             print("❌ \(error)")
             fatalError("Failed to decode the JSON.")

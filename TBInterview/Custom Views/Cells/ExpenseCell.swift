@@ -29,18 +29,27 @@ class ExpenseCell: UICollectionViewCell {
     private func configure() {
         backgroundColor = .white
         layer.cornerRadius = 10
-        addSubViews(titleLabel, categoryLabel, amountLabel)
-        
+
+        let titleCategoryStackView = UIStackView(arrangedSubviews: [titleLabel, categoryLabel])
+        titleCategoryStackView.spacing = 4
+        titleCategoryStackView.axis = .vertical
+        titleCategoryStackView.translatesAutoresizingMaskIntoConstraints = false
+
+        addSubViews(titleCategoryStackView, amountLabel)
+
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            
-            categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            categoryLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            
+            titleCategoryStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            titleCategoryStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+
             amountLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             amountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
         ])
+    }
+    
+    override func prepareForReuse() {
+        titleLabel.text = ""
+        categoryLabel.text = ""
+        amountLabel.text = ""
     }
     
     required init?(coder: NSCoder) {

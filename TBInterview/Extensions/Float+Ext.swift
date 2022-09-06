@@ -12,6 +12,7 @@ extension Float {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencyCode = "USD"
+        formatter.currencyGroupingSeparator = ""
         return formatter.string(from: NSNumber(value: self))!
     }
 }

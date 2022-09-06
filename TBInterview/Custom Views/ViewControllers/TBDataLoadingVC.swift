@@ -18,7 +18,10 @@ class TBDataLoadingVC: UIViewController {
         containerView.backgroundColor = .systemBackground
         containerView.alpha = 0
         
-        UIView.animate(withDuration: 0.25) { self.containerView.alpha = 0.8 }
+        let animationDuration: CGFloat = 0.25
+        let alpha: CGFloat = 0.8
+        
+        UIView.animate(withDuration: animationDuration) { self.containerView.alpha = alpha }
         
         let activityIndicator = UIActivityIndicatorView(style: .large)
         containerView.addSubview(activityIndicator)

@@ -12,7 +12,7 @@ class TBAlertVC: UIViewController {
     let containerView = TBAlertContainerView()
     let titleLabel = TBTitleLabel(textAlignment: .center, fontSize: 20, weight: .bold)
     let messageLabel = TBBodyLabel(textAlignment: .center)
-    let actionButton = TBButton(backgroundColor: .radical, title: "Ok")
+    let actionButton = TBButton(backgroundColor: .radical, titleColor: .white, title: "Ok")
     
     var alertTitle: String?
     var message: String?
